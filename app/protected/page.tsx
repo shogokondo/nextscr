@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server"; 
 import MyCalendar1 from "./MyCalendar1";
 import MyFullCalendar from "./MyFullCalendar";
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
 
 
 
