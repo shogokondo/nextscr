@@ -24,7 +24,7 @@ export default function Calendar() {
         setSelectedEvent(null)
     }
     return (
-        <div className='p-16'>
+        <div className='p-[10px]'>
             <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="timeGridWeek"
@@ -34,7 +34,7 @@ export default function Calendar() {
                     right: "timeGridWeek,dayGridMonth,timeGridDay",
                 }}
                 events={[
-                    { id: "1", title: "会議", start: "2025-10-08T08:00:00", end: "2025-01-10T12:00:00" },
+                    { id: "1", title: "会議", start: "2025-01-11T12:00:00", end: "2025-01-11T13:00:00" },
                     { id: "2", title: "ランチ", start: "2025-01-11T12:00:00", end: "2025-01-11T13:00:00" },
                 ]}
                 editable={true}
@@ -54,11 +54,11 @@ export default function Calendar() {
                 {selectedEvent && (
                 <div className='h-32'>
                     {selectedEvent.title} の詳細表示
-                    {selectedEvent.endStr && (
-                    <>終了: {selectedEvent.endStr}</>
-                    )}
                     {selectedEvent.startStr && (
-                    <>開始: {selectedEvent.startStr}</>
+                        <>開始: {selectedEvent.startStr}</>
+                    )}
+                    {selectedEvent.endStr && (
+                        <>終了: {selectedEvent.endStr}</>
                     )}
                 </div>
                 )}

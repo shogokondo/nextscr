@@ -17,8 +17,12 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-12">
-      <div className="w-full">
+    <div className="w-full h-[100%] flex flex-row">
+      <div className="w-[300px]">
+        <h1 className="text-3xl">Protected Page</h1>
+        <div>このページは認証されたユーザーのみが見ることができます。</div>
+      </div>
+      {/* <div className="w-full">
         <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
           This is a protected page that you can only see as an authenticated
           user
@@ -29,15 +33,14 @@ export default async function ProtectedPage() {
         <pre className="text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
           {JSON.stringify(data.claims, null, 2)}
         </pre>
-      </div>
-      <div>
-        <h2 className="text-xl bg-red-200">this is FullCalendar▼ </h2>
+      </div> */}
+      <div className="flex-1">
         <MyFullCalendar />
       </div>
-      <div>
+      {/* <div>
         <h2 className="text-xl bg-red-200">this is react-calendar▼</h2>
         <MyCalendar1 />
-      </div>
+      </div> */}
     </div>
   );
 }
