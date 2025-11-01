@@ -4,24 +4,29 @@ import MyCalendar1 from "./MyCalendar1";
 import MyFullCalendar from "./MyFullCalendar";
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import { useForm} from "react-hook-form";
+import PracticeReactHookForm from "./PracticeReactHookForm";
+
 
 
 
 
 export default async function ProtectedPage() {
-  const supabase = await createClient();
+  // const supabase = await createClient();
 
-  const { data, error } = await supabase.auth.getClaims();
-  if (error || !data?.claims) {
-    redirect("/auth/login");
-  }
+  // const { data, error } = await supabase.auth.getClaims();
+  // if (error || !data?.claims) {
+  //   redirect("/auth/login");
+  // }
 
   return (
     <div className="w-full h-[100%] flex flex-row">
-      <div className="w-[300px]">
+      {/* <div className="w-[300px]">
         <h1 className="text-3xl">Protected Page</h1>
         <div>このページは認証されたユーザーのみが見ることができます。</div>
-      </div>
+      </div> */}
+      <PracticeReactHookForm />
+
       {/* <div className="w-full">
         <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
           This is a protected page that you can only see as an authenticated
@@ -34,9 +39,9 @@ export default async function ProtectedPage() {
           {JSON.stringify(data.claims, null, 2)}
         </pre>
       </div> */}
-      <div className="flex-1">
+      {/* <div className="flex-1">
         <MyFullCalendar />
-      </div>
+      </div> */}
       {/* <div>
         <h2 className="text-xl bg-red-200">this is react-calendar▼</h2>
         <MyCalendar1 />
